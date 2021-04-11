@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, View , StyleSheet, Touchable, TouchableOpacity, Text,Image, TextInput, ScrollView } from 'react-native';
+import Icon from "react-native-vector-icons/FontAwesome"
 export default class Login extends React.Component
 {
     render(){
@@ -22,6 +23,9 @@ export default class Login extends React.Component
                         <TextInput
                         placeholder={"Password"}
                         style={style.input}/>
+                        <TouchableOpacity style={{position:'absolute',right:10,top:15}}>
+                           <Icon name={"eye-slash"} size={20} /> 
+                        </TouchableOpacity>
                     </View>
                     <View style={style.item,{flexDirection:'row',justifyContent:'flex-end'}}>
                         <Text style={{color:'#525464',fontSize:13}}>Forget your password?</Text>
@@ -35,9 +39,9 @@ export default class Login extends React.Component
                         <Text style={{color:'#525464'}}>Or</Text>
                     </View>
                     <View style={style.social}>
-                        <TouchableOpacity>
+                        <TouchableOpacity style={style.social_item}>
                             <Text style={style.social_item}>
-                                Facebook
+                                <Icon name={"facebook-f"} color={'#3b5999'} size={14}></Icon>
                             </Text>
                         </TouchableOpacity>
 
@@ -65,5 +69,5 @@ input:{borderWidth:1,borderColor:'#B0B0C3', backgroundColor:'#F7F7F7',paddingVer
 button:{backgroundColor:'#20C3AF',paddingVertical:15,borderRadius:5,justifyContent:'center',alignItems:'center'},
 button_text:{textAlign:'center',color:'white',fontSize:17,fontWeight:'600'},
 social:{flexDirection:'row',justifyContent:'center',marginBottom:10},
-social_item:{padding:10,borderWidth:1,borderColor:'#E2E2E0'},
+social_item:{padding:7,borderWidth:1,borderColor:'#E2E2E0'},
 })
